@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #1e40af;
+  --bpbd-orange: #ea580c; /* Orange khas BPBD */
+  --bpbd-yellow: #eab308;
+  --sidebar-bg: #ffffff;
+  --bg-color: #fefcf5; /* Kuning krem sangat lembut untuk background */
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --danger-red: #ef4444;
+  --warning-yellow: #f59e0b;
+  --success-green: #10b981;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
