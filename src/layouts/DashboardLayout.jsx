@@ -7,7 +7,7 @@ const DashboardLayout = ({ children }) => {
     <div className="dashboard-layout">
       <Sidebar />
       <div className="main-content-wrapper">
-        <Navbar />
+
         <main className="main-content">
           {children}
         </main>
