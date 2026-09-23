@@ -1,0 +1,627 @@
+.home-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Base Card Style */
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Earthquake Card */
+.empty-earthquake-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.empty-earthquake-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.empty-earthquake-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.empty-earthquake-icon {
+  background-color: #ef4444; /* Red color */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.empty-earthquake-title-wrapper h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #111827;
+  font-weight: bold;
+}
+.btn-refresh {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-refresh:hover {
+  background-color: #dc2626;
+}
+.empty-earthquake-message {
+  color: #94a3b8; /* Muted slate text */
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Current Weather Card */
+.current-weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ffffff;
+}
+
+.cwc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.cwc-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cwc-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cwc-icon-wrapper.blue-bg { background-color: #3b82f6; }
+.fwc-icon-wrapper.green-bg { background-color: #22c55e; }
+
+.cwc-title-wrapper h3, .fwc-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.btn-refresh-blue {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-refresh-blue:hover {
+  background-color: #2563eb;
+}
+
+.cwc-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.cwc-temp-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cwc-temp {
+  font-size: 32px;
+  font-weight: 800;
+  color: #334155;
+  line-height: 1;
+}
+
+.cwc-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.cwc-condition {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.cwc-location {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.cwc-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.cwc-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cwc-stat-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.cwc-stat-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Forecast Weather Card */
+.forecast-weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ffffff;
+}
+
+.fwc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.fwc-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fwc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.fwc-item {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  border: 1px solid #f1f5f9;
+}
+
+.fwc-day {
+  font-size: 13px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.fwc-cond {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.fwc-temp {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Disaster Card */
+.disaster-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.disaster-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.disaster-header h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.disaster-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--bpbd-orange) 0%, #c2410c 100%);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(234, 88, 12, 0.4);
+}
+
+.incident-detail-banner {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.incident-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 12px;
+}
+
+.incident-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.incident-icon {
+  background-color: #fef3c7;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incident-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.incident-status {
+  font-weight: 400;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.btn-detail {
+  background-color: #6366f1; /* Purple/Indigo */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.btn-detail:hover {
+  background-color: #4f46e5;
+}
+
+.detail-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 4px 0 0 0;
+}
+
+.incident-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+.incident-field {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.field-label {
+  color: #64748b;
+  min-width: 150px;
+}
+
+.field-value {
+  color: #0f172a;
+  font-weight: 600;
+  flex: 1;
+}
+
+.highlight-purple {
+  color: #6366f1;
+}
+
+.disaster-stats-row {
+  display: flex;
+  gap: 20px;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  flex: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  transition: transform 0.2s ease;
+}
+.stat-item:hover {
+  transform: translateY(-2px);
+}
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.red-bg { background-color: #fee2e2; color: #ef4444; }
+.blue-bg { background-color: #dbeafe; color: #3b82f6; }
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.stat-value {
+  font-size: 16px;
+}
+
+/* Affected Areas */
+.affected-areas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+}
+.section-header h3 { font-size: 16px; }
+.link-detail { font-size: 12px; color: var(--primary-blue); font-weight: bold; }
+
+.affected-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+}
+.list-title {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  border-left: 2px solid #000;
+  padding-left: 8px;
+}
+.affected-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.affected-list li {
+  background-color: #e0f2fe;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.affected-list li:hover {
+  background-color: #bae6fd;
+  transform: translateX(4px);
+}
+.affected-list li.active {
+  background: linear-gradient(90deg, var(--bpbd-orange) 0%, #c2410c 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
+}
+/* Custom Bar Chart */
+.custom-bar-chart {
+  position: relative;
+  height: 200px;
+  margin-top: 10px;
+  padding-bottom: 24px;
+}
+
+.chart-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.grid-line {
+  height: 1px;
+  width: 100%;
+  background-color: #f1f5f9;
+}
+
+.grid-line:last-child {
+  background-color: #cbd5e1;
+  height: 2px;
+}
+
+.chart-bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 10px;
+  z-index: 2;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+  max-width: 60px;
+  gap: 8px;
+}
+
+.bar-wrapper {
+  width: 100%;
+  height: calc(100% - 24px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.bar {
+  width: 100%;
+  max-width: 40px;
+  background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -2px 10px rgba(139, 92, 246, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+}
+
+.bar:hover {
+  background: linear-gradient(180deg, #7c3aed 0%, #a78bfa 100%);
+  transform: scaleY(1.05);
+  box-shadow: 0 -8px 20px rgba(124, 58, 237, 0.4);
+}
+
+.bar-tooltip {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #1e293b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.bar-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px 4px 0;
+  border-style: solid;
+  border-color: #1e293b transparent transparent transparent;
+}
+
+.bar:hover .bar-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.bar-label {
+  font-size: 10px;
+  color: #64748b;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.affected-summary p {
+  font-size: 14px;
+}
