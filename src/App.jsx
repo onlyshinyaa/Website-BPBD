@@ -1,13 +1,16 @@
-import React from 'react'
-import DashboardLayout from './layouts/DashboardLayout'
-import Home from './pages/Home/Home'
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import DashboardLayout from './layouts/DashboardLayout';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
-    <DashboardLayout>
-      <Home />
-    </DashboardLayout>
-  )
+    <BrowserRouter>
+      <DashboardLayout>
+        <AppRoutes />
+      </DashboardLayout>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

@@ -1,90 +1,120 @@
 .dashboard-layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color, #f8fafc);
 }
 
 .main-content-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  background-color: var(--bg-color, #f8fafc);
+  width: 100%;
 }
 
 .main-content {
   flex: 1;
-  overflow-y: auto;
-  padding: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 28px 48px;
+  box-sizing: border-box;
 }
 
-/* Navbar Styles */
+/* Top Navbar Styles */
 .top-navbar {
   height: 70px;
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-  z-index: 10;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+  gap: 20px;
 }
 
 .top-navbar-left {
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-
-.top-navbar-logos {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-box {
-  width: 46px;
-  height: 46px;
-  background-color: #ffffff;
+  width: 44px;
+  height: 44px;
+  background-color: #fff7ed;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #f1f5f9;
+  border: 1px solid #fed7aa;
+  box-shadow: 0 2px 4px rgba(249, 115, 22, 0.08);
 }
 
 .navbar-logo-img {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
-}
-
-.bnpb-logo {
-  width: 34px;
-  height: 34px;
 }
 
 .top-navbar-text {
   display: flex;
   flex-direction: column;
+  gap: 2px;
+}
+
+.navbar-agency-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.agency-badge-pill {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ea580c;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 1px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+.live-status-pill {
+  font-size: 11px;
+  font-weight: 700;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 1px 7px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #16a34a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
 }
 
 .top-navbar-title {
-  font-size: 18px;
+  font-size: 14.5px;
   font-weight: 700;
-  color: #111827;
+  color: #0f172a;
   line-height: 1.2;
 }
 
-.top-navbar-subtitle {
-  font-size: 13px;
-  color: #6b7280;
-}
-
-.top-navbar-right {
+/* Nav Links Center */
+.top-navbar-center {
   display: flex;
   align-items: center;
   height: 100%;
@@ -92,39 +122,104 @@
 
 .top-nav-links {
   display: flex;
-  gap: 32px;
+  gap: 4px;
   align-items: center;
-  height: 100%;
+  background: #f8fafc;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
 }
 
 .top-nav-link {
   text-decoration: none;
   color: #64748b;
-  font-size: 14px;
-  font-weight: 500;
-  height: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 7px;
   display: flex;
   align-items: center;
   position: relative;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .top-nav-link:hover {
-  color: #111827;
+  color: #0f172a;
+  background: #ffffff;
 }
 
 .top-nav-link.active {
-  color: #7c3aed;
-  font-weight: 600;
+  color: #ea580c;
+  background: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-.top-nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background-color: #7c3aed;
-  border-radius: 3px 3px 0 0;
+/* Navbar Right Emergency Call & Clock */
+.top-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
+.navbar-clock-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  font-variant-numeric: tabular-nums;
+}
+
+.emergency-call-btn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #dc2626;
+  color: #ffffff;
+  padding: 6px 14px 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.2);
+  transition: all 0.2s ease;
+}
+
+.emergency-call-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.emergency-call-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emergency-call-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.emergency-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+.emergency-number {
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+

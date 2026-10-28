@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, BarChart2, Network, AlertTriangle, Phone, User, UserCog } from 'lucide-react';
+import { Home, BarChart2, Network, AlertTriangle, Phone, UserCog } from 'lucide-react';
 
 const Sidebar = () => {
   return (
