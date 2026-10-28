@@ -1,0 +1,725 @@
+/* ==========================================================================
+   SISTEM INFORMASI TANGGAP BENCANA - BPBD KOTA PAYAKUMBUH
+   RESPONSIVE DESIGN SYSTEM (MOBILE, TABLET, DESKTOP)
+   ========================================================================== */
+
+/* Universal Mobile Fixes & Overflow Containment */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base styles for Mobile Menu Elements */
+.mobile-menu-toggle-btn {
+  display: none;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobile-menu-toggle-btn:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #ea580c;
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+  animation: backdropFade 0.25s ease-out forwards;
+}
+
+@keyframes backdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mobile-menu-drawer {
+  width: 85%;
+  max-width: 340px;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+  animation: drawerSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow-y: auto;
+  position: relative;
+}
+
+@keyframes drawerSlide {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-drawer-header {
+  padding: 20px 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.drawer-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drawer-brand {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.3px;
+}
+
+.drawer-sub {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.drawer-close-btn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.drawer-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.mobile-drawer-info {
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.drawer-live-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.drawer-time-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 6px;
+  flex: 1;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.mobile-nav-item:hover {
+  background: #f1f5f9;
+  color: #ea580c;
+  transform: translateX(3px);
+}
+
+.mobile-nav-item.active {
+  background: #fff7ed;
+  color: #ea580c;
+  font-weight: 700;
+  border-left: 3px solid #ea580c;
+}
+
+.mobile-drawer-footer {
+  padding: 18px 20px 24px;
+  border-top: 1px solid #f1f5f9;
+  background: #ffffff;
+}
+
+.mobile-drawer-emergency-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  transition: transform 0.2s;
+}
+
+.mobile-drawer-emergency-btn:active {
+  transform: scale(0.98);
+}
+
+.m-emergency-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.m-call-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.m-call-num {
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* ==========================================================================
+   BREAKPOINT: Large Desktops / Laptops (<= 1280px)
+   ========================================================================== */
+@media (max-width: 1280px) {
+  .top-navbar {
+    padding: 0 24px;
+    gap: 16px;
+  }
+
+  .top-nav-links {
+    gap: 16px;
+  }
+
+  .main-content {
+    padding: 20px 24px 40px;
+  }
+
+  .home-container {
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT: Tablet Landscape / Medium Screens (<= 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Layout changes */
+  .home-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .side-column {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  /* Navbar adjustments */
+  .top-nav-links {
+    display: none; /* Hidden on tablet & mobile, accessible via drawer */
+  }
+
+  .mobile-menu-toggle-btn {
+    display: flex;
+  }
+
+  .top-navbar {
+    padding: 0 20px;
+  }
+
+  /* Disaster Quick Cards on Tablet */
+  .disaster-quick-cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  /* Affected Areas on Tablet */
+  .affected-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .affected-list ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+  }
+
+  .affected-list li {
+    text-align: center;
+  }
+
+  .summary-box {
+    height: auto;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT: Mobile & Tablet Portrait (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Container & Layout */
+  .main-content {
+    padding: 14px 14px 36px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .side-column {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Navbar */
+  .top-navbar {
+    height: 66px;
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .logo-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .navbar-logo-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .top-navbar-title {
+    font-size: 13.5px;
+    font-weight: 700;
+  }
+
+  .agency-badge-pill {
+    font-size: 9.5px;
+    padding: 2px 5px;
+  }
+
+  .navbar-clock-badge {
+    display: none; /* Moved into drawer menu for cleaner header */
+  }
+
+  .emergency-call-btn {
+    padding: 6px 10px;
+    gap: 6px;
+    border-radius: 8px;
+  }
+
+  .emergency-call-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .emergency-label {
+    display: none; /* Keep header clean */
+  }
+
+  .emergency-number {
+    font-size: 12px;
+  }
+
+  /* Alert Broadcast Ticker - Clean vertical stacking */
+  .alert-broadcast-ticker {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .broadcast-label {
+    justify-content: flex-start;
+  }
+
+  .broadcast-content {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .broadcast-action {
+    width: 100%;
+    justify-content: center;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Section Header & Filters */
+  .disaster-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
+  .section-title-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .section-title-row h2 {
+    font-size: 17px;
+  }
+
+  .disaster-section-header p {
+    font-size: 12.5px;
+  }
+
+  .disaster-filter-chips {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .disaster-filter-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Disaster Quick Cards: 1 column on mobile to prevent squished content */
+  .disaster-quick-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .quick-disaster-card {
+    padding: 14px 16px;
+  }
+
+  .quick-card-title {
+    font-size: 15px;
+  }
+
+  .quick-card-footer {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Incident Detail Spotlight */
+  .modern-banner {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .incident-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .incident-title-wrapper {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .incident-icon-pulse {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .incident-title {
+    font-size: 16px;
+  }
+
+  .incident-header-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-detail {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .modern-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .incident-field-box {
+    padding: 10px 12px;
+  }
+
+  .field-label {
+    font-size: 11px;
+  }
+
+  .field-value {
+    font-size: 13px;
+  }
+
+  .modern-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stat-item {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+
+  /* Affected Areas Card */
+  .affected-areas-card {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .section-header h3 {
+    font-size: 16px;
+  }
+
+  .link-detail {
+    align-self: flex-start;
+  }
+
+  .custom-bar-chart {
+    height: 200px;
+    padding: 12px 6px 24px;
+  }
+
+  .chart-bars {
+    left: 6px;
+    right: 6px;
+    padding: 0 2px;
+  }
+
+  .bar-group {
+    max-width: 48px;
+    gap: 4px;
+  }
+
+  .bar {
+    max-width: 24px;
+  }
+
+  .bar-label {
+    font-size: 10px;
+  }
+
+  .summary-box {
+    padding: 14px;
+    height: auto;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT: Small Smartphones (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 12px 10px 30px;
+  }
+
+  .top-navbar {
+    padding: 0 10px;
+  }
+
+  .top-navbar-left {
+    gap: 8px;
+  }
+
+  .top-navbar-text {
+    max-width: calc(100vw - 190px);
+  }
+
+  .top-navbar-title {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navbar-agency-badge {
+    gap: 4px;
+  }
+
+  .live-status-pill .status-text {
+    display: none; /* Show dot only on extra small screens */
+  }
+
+  .live-status-pill {
+    padding: 3px 5px;
+  }
+
+  .emergency-call-btn {
+    padding: 6px 8px;
+  }
+
+  .emergency-number {
+    font-size: 11px;
+  }
+
+  /* Weather card layout on small screens */
+  .cwc-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cwc-stats {
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px 8px;
+  }
+
+  .fwc-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .fwc-item {
+    padding: 10px 4px;
+  }
+
+  .fwc-day {
+    font-size: 11px;
+  }
+
+  .fwc-cond {
+    font-size: 10px;
+    min-height: 24px;
+    line-height: 1.2;
+  }
+
+  .fwc-temp {
+    font-size: 13px;
+  }
+
+  .affected-list ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .affected-list li {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+}
+
+/* Penyesuaian Responsif untuk Public Hero Banner & KPI Grid */
+@media (max-width: 1024px) {
+  .public-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .public-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-actions-right {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .btn-hero-action {
+    flex: 1;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .public-kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .public-hero-banner {
+    padding: 18px 16px;
+  }
+  .hero-title {
+    font-size: 18px;
+  }
+  .hero-subtitle {
+    font-size: 12.5px;
+  }
+  .btn-hero-action {
+    width: 100%;
+    flex: none;
+  }
+  .home-content-grid {
+    grid-template-columns: 1fr;
+  }
+}

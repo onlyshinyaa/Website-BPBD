@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-blue: #1e40af;
-  --bpbd-orange: #ea580c; /* Orange khas BPBD */
-  --bpbd-yellow: #eab308;
-  --sidebar-bg: #ffffff;
-  --bg-color: #fefcf5; /* Kuning krem sangat lembut untuk background */
-  --text-dark: #1e293b;
-  --text-muted: #64748b;
-  --danger-red: #ef4444;
-  --warning-yellow: #f59e0b;
-  --success-green: #10b981;
+  --bpbd-orange: #f97316; /* Warna oranye identitas BPBD */
+  --bpbd-orange-dark: #ea580c;
+  --bpbd-orange-light: #fff7ed;
+  --bpbd-navy: #0f172a; /* Warna Slate / Navy gelap Command Center */
+  --bpbd-blue: #0284c7;
+  --bg-color: #f1f5f9; /* Slate 100 yang bersih, modern, dan sejuk */
   --card-bg: #ffffff;
   --border-color: #e2e8f0;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --danger-red: #ef4444;
+  --warning-amber: #f59e0b;
+  --success-emerald: #10b981;
 }
 
 * {
@@ -21,11 +22,26 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-dark);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left !important;
+  border: none !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
